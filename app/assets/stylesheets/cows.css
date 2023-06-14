@@ -1,0 +1,47 @@
+.main-contents{
+  min-height: 100vh;
+  background-color: beige;
+  display:flex;
+  justify-content: space-around;
+}
+
+.left-contents{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+ul.cow-list{
+  margin-top: 30px;
+  list-style: none;
+}
+
+ul.cow-list li{
+  background-image: url('cow.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: auto 100px;
+  padding-left: 30px;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.cow{
+  border: 1px solid black;
+  border-radius: 5px;
+  border-width: 2px;
+  margin-top: 5px;
+  width: 300px;
+  height: 100px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-contents{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
