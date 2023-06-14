@@ -1,0 +1,60 @@
+.top-page-header{
+  background-color: aquamarine;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title{
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.title-text{
+  text-decoration: none;
+  color: black
+}
+
+.sub-contents{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.cow-plus{
+  height: 65px;
+  font-size: 30px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.feed-edit{
+  height: 65px;
+  font-size: 30px;
+  background-color: rgb(61, 156, 61);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+}
+
+.logout{
+  height: 65px;
+  font-size: 30px;
+  background-color: rgb(11, 91, 91);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+}
