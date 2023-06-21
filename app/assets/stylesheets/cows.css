@@ -45,3 +45,78 @@ ul.cow-list li{
   justify-content: center;
 }
 
+.registration-cow{
+  background-color: rgb(217, 214, 214);
+  width: 500px;
+}
+
+.main-contents .main-title{
+  margin: 60px 0;
+  font-size: 50px;
+  width: auto;
+  text-align: center;
+}
+
+.form-text-wrap .form-text{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-text-wrap .indispensable{
+  color:red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-group .input-default{
+  height: 40px;
+  width: 300px;
+  margin-top: 10px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+.input-birth-wrap{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.input-birth-wrap select{
+  margin-top: 10px;
+  height: 35px;
+  width: 70px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.input-birth-wrap p{
+  line-height: 70px;
+  padding: 0 5px;
+}
+
+.form-group .input-memo{
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.register-cow-btn{
+  margin-top:40px;
+  height:60px;
+  width:160px;
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 40px;
+}
