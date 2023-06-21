@@ -13,7 +13,7 @@
       ユーザー情報編集
     </div>
     <div class="logout">
-      ログアウト
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
     </div>
   </div>
 </header>
