@@ -1,6 +1,6 @@
 <%= render "shared/header2" %>
 <div class="main-contents">
-  <%= form_with(model: @cow, local: true) do |form| %>
+  <%= form_with model: @cow, local: true do |form| %>
     <div class="main-title">
       牛の追加
     </div>
@@ -9,7 +9,7 @@
         <label class="form-text">個体番号</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :cow_number, class:"input-default", id:"cow-number", placeholder:"1234567890", maxlength:"10" %>
+      <%= form.text_area :number, class:"input-default", id:"cow-number", placeholder:"1234567890", maxlength:"10" %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
@@ -17,7 +17,7 @@
       </div>
       <div class='input-birth-wrap'>
         <%= raw sprintf(
-                    f.date_select(
+                    form.date_select(
                       :birth_day,
                       class:'select-birth',
                       id:"birth-date",
@@ -33,10 +33,10 @@
       <div class="form-text-wrap">
         <label class="form-text">メモ<label>
       </div>
-      <%= f.text_area :cow_memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
+      <%= form.text_area :memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
     </div>
     <div class='register-btn'>
-      <%= f.submit "追加" ,class:"register-btn" %>
+      <%= form.submit "追加" ,class:"register-btn" %>
   </div>
   <% end %>
 </div>

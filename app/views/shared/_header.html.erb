@@ -1,10 +1,10 @@
 <header class="top-page-header">
   <div class="title">
-    <%= link_to "Cattle_Feed", "cows_index_path", class: "title-text"%>
+    <%= link_to "Cattle_Feed", cows_index_path, class: "title-text"%>
   </div>
   <div class="sub-contents">
     <div class="cow-plus">
-      牛の追加
+      <%= link_to "牛の追加", new_cow_path, method: :get, class: 'btn' %>
     </div>
     <div class="feed-edit">
       餌の編集
