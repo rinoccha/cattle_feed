@@ -27,7 +27,7 @@
   height: 100%;
 }
 
-.cow-plus, .feed-edit, .user-edit, .logout{
+.cow-plus, .feed-edit, .user-edit, .logout, .back-btn{
   height: 65px;
   font-size: 30px;
   border-radius: 5px;
@@ -48,7 +48,7 @@
   background-color: rgb(43, 123, 177);
 }
 
-.logout{
+.logout, .back-btn{
   background-color: rgb(11, 91, 91);
   color: white;
 }
