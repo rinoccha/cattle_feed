@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to cows_index_path
+      redirect_to cows_path
     else
       render :edit
     end
