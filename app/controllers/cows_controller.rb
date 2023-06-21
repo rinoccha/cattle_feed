@@ -1,4 +1,24 @@
 class CowsController < ApplicationController
+
   def index
+  end
+
+  def new
+    @cow = Cow.new
+  end
+
+  def create
+    if Cow.create(cow_params)
+      redirect_to cows_path
+    else
+      render :new
+    end
+  end
+
+
+  private
+  
+  def cow_params
+    params.require(:cow).permit(:number, :birth_day, :memo).merge(user_id: current_user.id)
   end
 end
