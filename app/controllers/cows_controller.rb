@@ -16,6 +16,9 @@ class CowsController < ApplicationController
     end
   end
 
+  def show
+    @cow = Cow.find(params[:id])
+  end
 
   private
   
