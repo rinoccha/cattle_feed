@@ -5,7 +5,11 @@
       <div class="cow-contents">
         <% @cows.first(@cows.size / 2).each do |cow| %>
           <ul class="cow-list">
-            <li class="cow" doraggable="true"><%= cow.number %></li>
+            <%= link_to cow_path(cow.id) do %>
+              <li class="cow" doraggable="true">
+                <%= cow.number %>
+              </li>
+            <% end %>
           </ul>
         <% end %>
       </div>
