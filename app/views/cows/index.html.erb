@@ -7,7 +7,7 @@
           <ul class="cow-list">
             <%= link_to cow_path(cow.id) do %>
               <li class="cow" doraggable="true">
-                <%= cow.number %>
+                <%= cow.numbers %>
               </li>
             <% end %>
           </ul>
@@ -18,7 +18,11 @@
       <div class="cow-contents">
         <% @cows.drop(@cows.size / 2).each do |cow| %>
           <ul class="cow-list">
-            <li class="cow" doraggable="true"><%= cow.number %></li>
+            <%= link_to cow_path(cow.id) do %>
+              <li class="cow" doraggable="true">
+                <%= cow.numbers %>
+              </li>
+            <% end %>
           </ul>
         <% end %>
       </div>

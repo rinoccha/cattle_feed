@@ -23,6 +23,6 @@ class CowsController < ApplicationController
   private
   
   def cow_params
-    params.require(:cow).permit(:number, :birth_day, :memo).merge(user_id: current_user.id)
+    params.require(:cow).permit(:numbers, :birth_day, :memo).merge(user_id: current_user.id)
   end
 end
