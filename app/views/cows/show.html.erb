@@ -23,9 +23,31 @@
       <span class="birth-year"><%= years_months[0] %></span>年<%= years_months[1] %>
     </div>
   </div>
-  <div class="feed-contents">
-    <>
+
+  <div class="feed-info">
+    <div class="feed-contents">
+      <div class="feed-label">
+        給餌予定リスト
+      </div>
+      <div class="feed-list">
+        <div class="feed-name">
+        アルファルファ
+        </div>
+        <div class="feed-quantity">
+        5kg
+        </div>
+      </div>
+    </div>
+    <div class="feed-edit">
+      <%= link_to "餌の変更", "#", class:'btn' %>
+    </div>
   </div>
-  <div class="memo">
+  <div class="memo-info">
+    <div class="memo-label">
+    メモ
+    </div>
+    <div class="memo-contents">
+    <%= @cow.memo %>
+    </div>
   </div>
 </div>

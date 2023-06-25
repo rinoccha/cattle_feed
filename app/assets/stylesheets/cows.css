@@ -123,15 +123,20 @@ ul.cow-list li{
 
 /*******************ここからshowページ****************/
 .show-contents{
-  min-height: 100vh;
+  height: 100vh;
   background-color: beige;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .show-contents .cow-info{
   display: flex;
   justify-content: space-around;
   height: 100px;
-  padding-top: 100px;
+  width: 100%;
 }
 
 .cow-info .cow-edit-btn{
@@ -188,4 +193,83 @@ ul.cow-list li{
 .cow-birth-day .birth-year{
   font-weight: bold;
   color: rgb(230, 98, 98);
+}
+
+.show-contents .feed-info{
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.feed-info .feed-contents{
+  height: 100%;
+  width: 700px;
+  background-color: white;
+  margin-left: 250px;
+}
+
+.feed-contents .feed-label{
+  background-color: rgb(26, 132, 18);
+  height: 70px;
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  line-height: 70px;
+  padding-left: 10px;
+}
+
+.feed-contents .feed-list{
+  display: flex;
+  justify-content: space-around;
+  height: 230px;
+  width: 100%;
+}
+
+.feed-list .feed-name, .feed-list .feed-quantity{
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  padding-top: 5px;
+}
+
+.feed-info .feed-edit{
+  background-color: greenyellow;
+  width: 200px;
+  height: 70px;
+  margin: 230px 0 0 50px;
+  font-size: 40px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.show-contents .memo-info{
+  height: 150px;
+  width: 700px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.memo-info .memo-label{
+  height: 30px;
+  width: 100%;
+  background-color: rgb(18, 18, 91);
+  color: white;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.memo-info .memo-contents{
+  background-color: white;
+  height: 120px;
+  width: 100%;
+  font-size: 20px;
+  padding-left: 10px;
 }
