@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_06_21_122634) do
 
   create_table "cows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number", null: false
+    t.bigint "numbers", null: false
     t.date "birth_day"
     t.text "memo"
     t.bigint "user_id", null: false

@@ -1,0 +1,53 @@
+<%= render "shared/header2" %>
+<div class="show-contents">
+  <div class="cow-info">
+    <div class="cow-edit-btn">
+      <%= link_to "編集", "#", class: 'btn' %>
+    </div>
+    <div class="cow-number">
+      <div class="cow-number-label">
+        番号
+      </div>
+      <div class="cow-number-info">
+        <% @cow.numbers.to_s.chars.each_with_index do |char, index|%>
+          <% if index < 4 %>
+            <span class="large-number"><%= char %></span>
+          <% else %>
+            <span><%= char %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="cow-birth-day">
+      <% years_months = @cow.years_and_month_from_birthday.split("年") %>
+      <span class="birth-year"><%= years_months[0] %></span>年<%= years_months[1] %>
+    </div>
+  </div>
+
+  <div class="feed-info">
+    <div class="feed-contents">
+      <div class="feed-label">
+        給餌予定リスト
+      </div>
+      <div class="feed-list">
+        <div class="feed-name">
+        アルファルファ
+        </div>
+        <div class="feed-quantity">
+        5kg
+        </div>
+      </div>
+    </div>
+    <div class="feed-edit">
+      <%= link_to "餌の変更", "#", class:'btn' %>
+    </div>
+  </div>
+  <div class="memo-info">
+    <div class="memo-label">
+    メモ
+    </div>
+    <div class="memo-contents">
+    <%= @cow.memo %>
+    </div>
+  </div>
+</div>

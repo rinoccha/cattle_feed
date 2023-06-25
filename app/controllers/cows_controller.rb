@@ -1,6 +1,7 @@
 class CowsController < ApplicationController
 
   def index
+    @cows = Cow.all
   end
 
   def new
@@ -15,10 +16,13 @@ class CowsController < ApplicationController
     end
   end
 
+  def show
+    @cow = Cow.find(params[:id])
+  end
 
   private
   
   def cow_params
-    params.require(:cow).permit(:number, :birth_day, :memo).merge(user_id: current_user.id)
+    params.require(:cow).permit(:numbers, :birth_day, :memo).merge(user_id: current_user.id)
   end
 end
