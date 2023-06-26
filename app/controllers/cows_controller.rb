@@ -20,6 +20,14 @@ class CowsController < ApplicationController
     @cow = Cow.find(params[:id])
   end
 
+  def edit
+    @cow = Cow.find(params[:id])
+  end
+
+  def update
+    Cow.update(cow_params)
+  end
+
   private
   
   def cow_params
