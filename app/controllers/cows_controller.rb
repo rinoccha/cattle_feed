@@ -25,7 +25,15 @@ class CowsController < ApplicationController
   end
 
   def update
-    Cow.update(cow_params)
+
+    @cow = Cow.find(params[:id])
+
+    if @cow.update(cow_params)
+    redirect_to cow_path(@cow.id)
+    else
+    render :edit
+    end
+
   end
 
   private
