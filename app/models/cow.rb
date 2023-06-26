@@ -8,7 +8,7 @@ class Cow < ApplicationRecord
 
     if now.month < self.birth_day.month || (now.month == self.birth_day.month && now.day < self.birth_day.day)
       years -= 1
-      month = 12 + month - 1
+      months = 12 + months - 1
     end
 
     "#{years}年#{months}ヶ月"

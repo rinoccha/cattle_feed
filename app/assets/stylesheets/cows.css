@@ -273,3 +273,24 @@ ul.cow-list li{
   font-size: 20px;
   padding-left: 10px;
 }
+
+/************削除ボタン***********************/
+
+.main-contents .btn-corner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-contents .destroy-btn{
+  margin:40px 50px 0 0;
+  height:60px;
+  width:160px;
+  background-color: red;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -44,8 +44,13 @@
       </div>
       <%= form.text_area :memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
     </div>
-    <div class='register-btn'>
-      <%= form.submit "変更" ,class:"register-cow-btn" %>
-  </div>
+    <div class="btn-corner">
+      <div class='register-btn'>
+        <%= form.submit "変更" ,class:"register-cow-btn" %>
+      </div>
+      <div class='destroy-btn'>
+        <%= link_to "削除", cow_path, method: :delete, class:"delete-cow-btn" %>
+      </div>
+    </div>
   <% end %>
 </div>
