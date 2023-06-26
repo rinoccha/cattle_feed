@@ -25,15 +25,18 @@ class CowsController < ApplicationController
   end
 
   def update
-
     @cow = Cow.find(params[:id])
-
     if @cow.update(cow_params)
     redirect_to cow_path(@cow.id)
     else
     render :edit
     end
+  end
 
+  def destroy
+    @cow = Cow.find(params[:id])
+    @cow.destroy
+    redirect_to root_path
   end
 
   private
