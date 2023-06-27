@@ -1,7 +1,7 @@
 ## cowsテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| number    | bigint    | null: false                    |
+| numbers    | bigint    | null: false                    |
 | birth_day | date       | null: false                    |
 | memo      | text       | null: false                    |
 | user      | references | null: false, foreign_key: true |
