@@ -16,6 +16,8 @@
     餌一覧
   </div>
   <div class="feed-lists">
-    ・アルファルファ
+    <% @feeds.each do |feed|%>
+      ・<%= feed.name %>
+    <% end %>
   </div>
 </div>

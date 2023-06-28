@@ -1,5 +1,6 @@
 class Cow < ApplicationRecord
   validates :numbers, presence: true
+  belongs_to :user
 
   def years_and_month_from_birthday
     now = Time.zone.now
