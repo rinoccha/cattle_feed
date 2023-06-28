@@ -1,0 +1,40 @@
+.feed-main{
+  min-height: 100vh;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feed-title{
+  padding: 80px 0 40px 0;
+  font-size: 70px;
+}
+
+.feed-main .feed-lists{
+  background-color: white;
+  width: 300px;
+  height: auto;
+  padding: 40px 0;
+  font-size: 35px;
+}
+
+.feed-plus-main{
+  min-height: 100vh;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.register-feed-btn{
+  margin-top:40px;
+  height:60px;
+  width:160px;
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 40px;
+}
