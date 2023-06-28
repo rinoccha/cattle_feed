@@ -17,6 +17,7 @@
 | ------ | ---------- | ------------------------------ |
 | name   | string     | null: false                    |
 | price  | integer    | null: false                    |
+| volume | integer    | null: false                    |
 | user   | references | null: false, foreign_key: true |
 
 ### Association
