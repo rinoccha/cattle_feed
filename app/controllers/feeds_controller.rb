@@ -8,7 +8,8 @@ class FeedsController < ApplicationController
   end
 
   def create
-    if Feed.create(feed_params)
+    @feed = Feed.new(feed_params)
+    if @feed.save
       redirect_to feeds_path
     else
       render :new

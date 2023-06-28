@@ -9,7 +9,8 @@ class CowsController < ApplicationController
   end
 
   def create
-    if Cow.create(cow_params)
+    @cow = Cow.new(cow_params)
+    if @cow.save
       redirect_to cows_path
     else
       render :new
