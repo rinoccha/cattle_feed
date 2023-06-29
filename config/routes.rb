@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "cows#index"
   resources :users, only: [:edit, :update]
   resources :cows
-  resources :feeds, only: [:index, :new, :create]
+  resources :feeds, only: [:index, :new, :create, :show]
 end
