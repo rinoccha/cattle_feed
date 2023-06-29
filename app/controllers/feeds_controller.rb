@@ -18,6 +18,7 @@ class FeedsController < ApplicationController
 
   def show
     @feed = Feed.find(params[:id])
+    @price = sprintf("%.1f",@feed.price / @feed.volume.to_f)
   end
 
 
