@@ -21,6 +21,18 @@ class FeedsController < ApplicationController
     @price = sprintf("%.1f",@feed.price / @feed.volume.to_f)
   end
 
+  def edit
+    @feed = Feed.find(params[:id])
+  end
+
+  def update
+    @feed = Feed.find(params[:id])
+    if @feed.update(feed_params)
+      redirect_to feed_path
+    else
+      render :edit
+    end
+  end
 
   private
   

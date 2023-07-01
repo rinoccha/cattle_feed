@@ -1,0 +1,40 @@
+<header class="top-page-header2">
+  <div class="title">
+    <%= link_to "Cattle_Feed", cows_path, class: "title-text"%>
+  </div>
+  <div class="sub-contents">
+    <div class="back-btn">
+      <%= link_to "戻る", feed_path(@feed.id), class: 'btn'%>
+    </div>
+  </div>
+</header>
+<div class="feed-plus-main">
+  <%= form_with model: @feed, class: 'registration-feed', local: true do |form| %>
+    <div class="main-title">
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">名称</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= form.text_field :name, class:"input-default", id:"feed-name", placeholder:"餌の名称" %>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">値段</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= form.text_field :price, class:"input-default", id:"feed-price", placeholder:"（円）" %>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">数量</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= form.text_field :volume, class:"input-default", id:"feed-volume", placeholder:"（kg）" %>
+    </div>
+    <div class="register-btn">
+      <%= form.submit "決定", class:"register-feed-btn" %>
+    </div>
+  <% end %>
+</div>
