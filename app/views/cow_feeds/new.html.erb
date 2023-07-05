@@ -1,0 +1,30 @@
+<%= render "shared/header2" %>
+<div class="cow_feed_new">
+  <h1>餌の追加</h1>
+  <%= form_with(model: [@cow, @cow_feed], url: cow_cow_feeds_path(@cow)) do |form| %>
+    <div class="cow_feed_field">
+      <div class="cow_feed_label">
+        <%= form.label :feed_id, "餌の名前" %>
+      </div>
+      <div class="cow_feed_form">
+        <%= form.collection_select :feed_id, @feeds, :id, :name, {prompt: "餌を選択してください"}, {class: "select-box"} %>
+      </div>
+    </div>
+
+    <div class="cow_feed_field">
+      <div class="cow_feed_label">
+        <%= form.label :volume, "量(kg)" %>
+      </div>
+      <div class="cow_feed_form">
+        <%= form.number_field :volume, step: 0.1, class: "select-box" %>
+      </div>
+    </div>
+
+    <%= form.submit "追加", class: "submit_btn" %>
+  <% end%>
+
+  <div class="cow_feed_back_btn">
+  <%= link_to "戻る", @cow, class: "back_btn" %>
+  </div>
+</div>
+

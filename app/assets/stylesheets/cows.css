@@ -202,7 +202,7 @@ ul.cow-list li{
 }
 
 .feed-info .feed-contents{
-  height: 100%;
+  height: auto;
   width: 700px;
   background-color: white;
   margin-left: 250px;
@@ -221,8 +221,9 @@ ul.cow-list li{
 .feed-contents .feed-list{
   display: flex;
   justify-content: space-around;
-  height: 230px;
+  height: auto;
   width: 100%;
+  padding: 20px;
 }
 
 .feed-list .feed-name, .feed-list .feed-quantity{
@@ -274,6 +275,20 @@ ul.cow-list li{
   padding-left: 10px;
 }
 
+tr, th, td{
+  border: 1px solid black;
+  height: 30px;
+  width: 150px;
+}
+.feed-list table th{
+  text-align: center;
+  padding:10px;
+}
+
+table td{
+  text-align: center;
+  padding-top: 10px;
+}
 /************削除ボタン***********************/
 
 .main-contents .btn-corner{
