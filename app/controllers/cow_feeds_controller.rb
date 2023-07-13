@@ -24,26 +24,27 @@ class CowFeedsController < ApplicationController
   end
 
   def edit
-    @cow = Cow.find(params[:id])
+    @cow = Cow.find(params[:cow_id])
     @feeds = Feed.all
-    @cow_feed = Cow_feed.find(params[:id])
+    @cow_feed = @cow.cow_feeds
   end
 
   def update
-    @cow = Cow.find(params[:id])
+    @cow = Cow.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.find(params[:id])
     if @cow_feed.update(cow_feed_params)
-      redirect_to @cow, notice: "餌の情報を更新しました"
+      new_price = @cow_feed.feed.unit_price * @cow_feed.volume
+      render json: {volume: @cow_feed.volume, price: new_price}
     else
-      render :edit
+      render json: { error: '更新に失敗しました'}, status: 400
     end
   end
 
   def destroy
-    @cow = Cow.find(params[:id])
+    @cow = Cow.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.find(params[:id])
     if @cow_feed.destroy
-      redirect_to @cow, notice: "餌を削除しました"
+      render :edit, notice: "餌を削除しました"
     else
       render :edit
     end
