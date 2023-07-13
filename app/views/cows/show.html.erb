@@ -30,18 +30,49 @@
         給餌予定リスト
       </div>
       <div class="feed-list">
-        <div class="feed-name">
-        アルファルファ
-        </div>
-        <div class="feed-quantity">
-        5kg
-        </div>
+        <% if @cow.cow_feeds.any? %>
+          <table>
+            <thead>
+              <tr>
+                <th>餌の名前</th>
+                <th>量</th>
+                <th>価格</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% total_price = 0 %>
+              <% total_volume = 0 %>
+              <% @cow.cow_feeds.each do |cow_feed| %>
+                <tr>
+                  <td><%= cow_feed.feed.name %></td>
+                  <td><%= cow_feed.volume %>kg</td>
+                  <td><%= cow_feed.feed.unit_price * cow_feed.volume %>円</td>
+                </tr>
+                <% total_volume = total_volume + cow_feed.volume %>
+                <% total_price = total_price + (cow_feed.feed.unit_price * cow_feed.volume) %>
+              <% end %>
+              <tr>
+                <td>合計</td>
+                <td><%= total_volume %>kg</td>
+                <td><%= total_price %>円</td>
+              </tr>
+            </tbody>
+          </table>
+        <% else %>
+          <p>与える餌はまだありません</p>
+        <% end %>
       </div>
     </div>
-    <div class="feed-edit">
-      <%= link_to "餌の変更", "#", class:'btn' %>
+    <div class="feed-option-box">
+      <div class="feed-edit">
+        <%= link_to "餌の編集", edit_cow_cow_feed_path(@cow), class:'btn' %>
+      </div>
+      <div class="feed-edit">
+        <%= link_to "餌の追加", new_cow_cow_feed_path(@cow), class:'btn' %>
+      </div>
     </div>
   </div>
+
   <div class="memo-info">
     <div class="memo-label">
     メモ
