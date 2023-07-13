@@ -1,0 +1,2 @@
+module CowFeedsHelper
+end

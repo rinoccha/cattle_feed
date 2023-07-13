@@ -9,6 +9,7 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
+    @feed.unit_price = sprintf("%.2f", @feed.volume.to_f / @feed.price.to_f)
     if @feed.save
       redirect_to feeds_path
     else
@@ -18,7 +19,6 @@ class FeedsController < ApplicationController
 
   def show
     @feed = Feed.find(params[:id])
-    @price = sprintf("%.1f",@feed.price / @feed.volume.to_f)
   end
 
   def edit
@@ -27,6 +27,7 @@ class FeedsController < ApplicationController
 
   def update
     @feed = Feed.find(params[:id])
+    @feed.unit_price = sprintf("%.2f", @feed.volume.to_f / @feed.price.to_f)
     if @feed.update(feed_params)
       redirect_to feed_path
     else
