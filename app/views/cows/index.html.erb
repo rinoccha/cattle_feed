@@ -3,28 +3,49 @@
   <div class="main-contents">
     <div class="left-contents">
       <div class="cow-contents">
-        <% @cows.first(@cows.size / 2).each do |cow| %>
-          <ul class="cow-list">
-            <%= link_to cow_path(cow.id) do %>
-              <li class="cow" doraggable="true">
-                <%= cow.numbers %>
+        <ul class="cow-list">
+          <% @cows.each do |cow| %>
+            <% if cow.position < @cows.size / 2 %>
+              <li id="<%= cow.id %>" class="cow" draggable="true" data-number='<%= cow.numbers %>' data-id='<%= cow.id %>'>
+                <% if cow.numbers == 0 %>
+                  <p>空枠</p>
+                <% else %>
+                  <%= cow.numbers %>
+                <% end %>
               </li>
             <% end %>
+          <% end %>
           </ul>
-        <% end %>
       </div>
+    </div>
+    <div class="middle-contents hidden" id="middle-contents">
+      <h3 class="cow-title">牛の番号</h3>
+      <p class="cow-p">1234567890</p>
+      <h3 class="feeds-title">給餌予定リスト</h3>
+      <div class="feeds-list">
+        <p class="feed-p">アルファルファ<span>  10kg</span></p>
+      </div>
+      <hr class="memo-line" width="180">
+      <div class="memo-list">
+        <p class="memo-p"></p>
+      </div>
+      <p class="show-p"><a href="#" id="detail-link">詳細</a></p>
     </div>
     <div class="right-contents">
       <div class="cow-contents">
-        <% @cows.drop(@cows.size / 2).each do |cow| %>
-          <ul class="cow-list">
-            <%= link_to cow_path(cow.id) do %>
-              <li class="cow" doraggable="true">
-                <%= cow.numbers %>
+        <ul class="cow-list">
+          <% @cows.each do |cow| %>
+            <% if cow.position >= @cows.size / 2 %>
+              <li id="<%= cow.id %>"class="cow" draggable="true" data-number='<%= cow.numbers %>' data-id='<%= cow.id %>'>
+                <% if cow.numbers == 0 %>
+                  <p>空枠</p>
+                <% else %>
+                  <%= cow.numbers %>
+                <% end %>
               </li>
             <% end %>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
