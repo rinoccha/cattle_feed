@@ -1,5 +1,6 @@
 class Cow < ApplicationRecord
   validates :numbers, presence: true
+  validates :position, presence: true, uniqueness: true
   belongs_to :user
   has_many :cow_feeds
   has_many :feeds, through: :cow_feeds
