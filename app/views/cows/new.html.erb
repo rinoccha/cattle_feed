@@ -31,12 +31,19 @@
     </div>
     <div class="form-group">
       <div class="form-text-wrap">
-        <label class="form-text">メモ<label>
+        <label class="form-text">メモ</label>
       </div>
       <%= form.text_area :memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
     </div>
     <div class='register-btn'>
       <%= form.submit "追加" ,class:"register-cow-btn" %>
     </div>
+  <% end %>
+
+  <%= form_tag(cows_path, method: :post) do %>
+    <%= hidden_field_tag 'cow[numbers]', '0000000000' %>
+    <%= hidden_field_tag 'cow[birth_day]', "" %>
+    <%= hidden_field_tag 'cow[memo]', "" %>
+    <%= submit_tag '空枠' %>
   <% end %>
 </div>
