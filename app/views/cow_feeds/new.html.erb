@@ -1,4 +1,13 @@
-<%= render "shared/header2" %>
+<header class="top-page-header2">
+  <div class="title">
+    <%= link_to "Cattle_Feed", cows_path, class: "title-text"%>
+  </div>
+  <div class="sub-contents">
+    <div class="back-btn">
+      <%= link_to "戻る", cow_path(@cow.id), class: 'btn'%>
+    </div>
+  </div>
+</header>
 <div class="cow_feed_new">
   <h1>餌の追加</h1>
   <%= form_with(model: [@cow, @cow_feed], url: cow_cow_feeds_path(@cow)) do |form| %>
