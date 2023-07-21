@@ -1,4 +1,13 @@
-<%= render "shared/header2" %>
+<header class="top-page-header2">
+  <div class="title">
+    <%= link_to "Cattle_Feed", cows_path, class: "title-text"%>
+  </div>
+  <div class="sub-contents">
+    <div class="back-btn">
+      <%= link_to "戻る", cow_path, class: 'btn'%>
+    </div>
+  </div>
+</header>
 <div class="feed-edit-box">
   <div class="box">
     <div class="feed-box">
@@ -6,7 +15,7 @@
         給餌予定リスト
       </div>
       <div class="box">
-        <div class="feed-list">
+        <div class="feed-list" data-turbolinks='false'>
           <% if @cow.cow_feeds.any? %>
             <table>
               <thead>
@@ -33,10 +42,11 @@
                   <% total_price = total_price + (cow_feed.feed.unit_price * cow_feed.volume) %>
                   <% total_volume = total_volume + cow_feed.volume %>
                 <% end %>
-                <tr>
+                <tr id="total-row">
                   <td>合計</td>
-                  <td><%= total_volume %>kg</td>
-                  <td><%= total_price %>円</td>
+                  <td id="total-volume"><%= total_volume %>kg</td>
+                  <td id="total-price"><%= total_price %>円</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
