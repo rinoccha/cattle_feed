@@ -1,8 +1,27 @@
+.cow-main-contents{
+  min-height: 100vh;
+  background-color: beige;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .main-contents{
   min-height: 100vh;
   background-color: beige;
   display:flex;
   justify-content: space-around;
+}
+
+.kara-cow{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  font-size: 30px;
+  margin: 0px auto 30px auto;
 }
 
 .left-contents{
@@ -48,8 +67,8 @@ ul.cow-list li{
 }
 
 .registration-cow{
-  background-color: rgb(217, 214, 214);
   width: 500px;
+  margin:auto;
 }
 
 .main-contents .main-title{
