@@ -1,49 +1,50 @@
 <%= render "shared/header2" %>
-<div class="main-contents">
-  <%= form_with model: @cow, class: 'registration-cow', local: true do |form| %>
-    <div class="main-title">
-      牛の追加
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">個体番号</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= form.text_field :numbers, class:"input-default", id:"cow-number", placeholder:"(10桁)", maxlength:"10" %>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">生年月日</label>
-      </div>
-      <div class='input-birth-wrap'>
-        <%= raw sprintf(
-                    form.date_select(
-                      :birth_day,
-                      class:'select-birth',
-                      id:"birth-date",
-                      use_month_numbers: true,
-                      prompt:'--',
-                      start_year: 2000,
-                      end_year: (Time.now.year),
-                      date_separator: '%s'),
-                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-text-wrap">
-        <label class="form-text">メモ</label>
-      </div>
-      <%= form.text_area :memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
-    </div>
-    <div class='register-btn'>
-      <%= form.submit "追加" ,class:"register-cow-btn" %>
-    </div>
-  <% end %>
-
-  <%= form_tag(cows_path, method: :post) do %>
+<div class="cow-main-contents">
+  <div class="main-title">
+    牛の追加
+  </div>
+  <div class=kara-cow>
+    <%= form_tag(cows_path, method: :post) do %>
     <%= hidden_field_tag 'cow[numbers]', '0000000000' %>
     <%= hidden_field_tag 'cow[birth_day]', "" %>
     <%= hidden_field_tag 'cow[memo]', "" %>
-    <%= submit_tag '空枠' %>
+    <%= submit_tag '空枠で登録' %>
+    <% end %>
+  </div>
+  <%= form_with model: @cow, class: 'registration-cow', local: true do |form| %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">個体番号</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= form.text_field :numbers, class:"input-default", id:"cow-number", placeholder:"(10桁)", maxlength:"10" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">生年月日</label>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  form.date_select(
+                    :birth_day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2000,
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">メモ</label>
+    </div>
+    <%= form.text_area :memo, class:"input-memo", id:"cow-memo", placeholder:"メモ入力欄" %>
+  </div>
+  <div class='register-btn'>
+    <%= form.submit "追加" ,class:"register-cow-btn" %>
+  </div>
   <% end %>
 </div>
