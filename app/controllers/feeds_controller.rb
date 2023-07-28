@@ -9,7 +9,7 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
-    @feed.unit_price = sprintf("%.2f", @feed.volume.to_f / @feed.price.to_f)
+    @feed.unit_price = sprintf("%.2f", @feed.price.to_f / @feed.volume.to_f)
     if @feed.save
       redirect_to feeds_path
     else
