@@ -71,11 +71,12 @@ ul.cow-list li{
   margin:auto;
 }
 
-.main-contents .main-title{
-  margin: 60px 0;
+.main-title{
+  margin: 60px auto;
   font-size: 50px;
-  width: auto;
+  width: 300px;
   text-align: center;
+  background-color: rgba(246, 246, 239, 0.935);
 }
 
 .form-text-wrap .form-text{
