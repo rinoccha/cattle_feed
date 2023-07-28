@@ -4,8 +4,8 @@
     <div class="left-contents">
       <div class="cow-contents">
         <ul class="cow-list">
-          <% @cows.each do |cow| %>
-            <% if cow.position < @cows.size / 2 %>
+          <% @cows.each_with_index do |cow, index| %>
+            <% if index < (@cows.size / 2.0).ceil %>
               <li id="<%= cow.id %>" class="cow" draggable="true" data-number='<%= cow.numbers %>' data-id='<%= cow.id %>'>
                 <% if cow.numbers == 0 %>
                   <p>空枠</p>
@@ -34,8 +34,8 @@
     <div class="right-contents">
       <div class="cow-contents">
         <ul class="cow-list">
-          <% @cows.each do |cow| %>
-            <% if cow.position >= @cows.size / 2 %>
+          <% @cows.each_with_index do |cow, index| %>
+            <% if index >= (@cows.size / 2.0).ceil %>
               <li id="<%= cow.id %>"class="cow" draggable="true" data-number='<%= cow.numbers %>' data-id='<%= cow.id %>'>
                 <% if cow.numbers == 0 %>
                   <p>空枠</p>

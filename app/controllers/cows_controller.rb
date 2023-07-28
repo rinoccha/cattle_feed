@@ -27,7 +27,6 @@ class CowsController < ApplicationController
   end
 
   def update
-    position
     @cow = Cow.find(params[:id])
     if @cow.update(cow_params)
     redirect_to cow_path(@cow.id)
