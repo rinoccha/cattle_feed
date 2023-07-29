@@ -1,7 +1,8 @@
 class CowsController < ApplicationController
+  before_action :set_cow, only: [:show, :edit, :update, :destroy, :feeds, :memo]
 
   def index
-    @cows = Cow.order(:position)
+    @cows = current_user.cows.order(:position)
   end
 
   def new
@@ -70,6 +71,10 @@ class CowsController < ApplicationController
   end
 
   private
+
+  def set_cow
+    @cow = current_user.cows.find(params[:id])
+  end
   
   def cow_params
     params.require(:cow).permit(:numbers, :birth_day, :memo).merge(user_id: current_user.id)

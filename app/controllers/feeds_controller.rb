@@ -1,6 +1,7 @@
 class FeedsController < ApplicationController
+  before_action :set_feed, only: [:show, :edit, :update, :destroy]
   def index
-    @feeds = Feed.all
+    @feeds = current_user.feeds.all
   end
 
   def new
@@ -43,6 +44,10 @@ class FeedsController < ApplicationController
   end
 
   private
+
+  def set_feed
+    @feed = current_user.feeds.find(params[:id])
+  end
   
   def feed_params
     params.require(:feed).permit(:name, :price, :volume).merge(user_id: current_user.id)

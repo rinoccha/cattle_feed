@@ -1,18 +1,18 @@
 class CowFeedsController < ApplicationController
   def index
-    @cow = Cow.find(params[:cow_id])
+    @cow = current_user.cows.find(params[:cow_id])
     @feeds = Feed.all
     @cow_feeds = Cow_feed.all
   end
 
   def new
-    @cow = Cow.find(params[:cow_id])
+    @cow = current_user.cows.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.new
-    @feeds = Feed.all
+    @feeds = current_user.feeds.all
   end
 
   def create
-    @cow = Cow.find(params[:cow_id])
+    @cow = current_user.cows.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.new(cow_feed_params)
     
     if @cow_feed.save
@@ -24,13 +24,13 @@ class CowFeedsController < ApplicationController
   end
 
   def edit
-    @cow = Cow.find(params[:cow_id])
-    @feeds = Feed.all
+    @cow = current_user.cows.find(params[:cow_id])
+    @feeds = current_user.feeds.all
     @cow_feed = @cow.cow_feeds
   end
 
   def update
-    @cow = Cow.find(params[:cow_id])
+    @cow = current_user.cows.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.find(params[:id])
     if @cow_feed.update(cow_feed_params)
       new_price = @cow_feed.feed.unit_price * @cow_feed.volume
@@ -41,7 +41,7 @@ class CowFeedsController < ApplicationController
   end
 
   def destroy
-    @cow = Cow.find(params[:cow_id])
+    @cow = current_user.cows.find(params[:cow_id])
     @cow_feed = @cow.cow_feeds.find(params[:id])
     if @cow_feed.destroy
       render :edit, notice: "餌を削除しました"
