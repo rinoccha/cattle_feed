@@ -145,6 +145,7 @@ ul.cow-list li{
 
 .middle-contents{
   width: 250px;
+  height: 90%;
   background-color: white;
   margin-top: 40px;
   border-radius: 5px;
@@ -190,7 +191,7 @@ ul.cow-list li{
   border: 1px solid blue;
   background-color: rgb(188, 188, 240);
   border-radius: 3px;
-  margin: 0px 40px;
+  margin: 0px 40px 10px 40px;
   height: 40px;
 }
 
@@ -200,7 +201,7 @@ ul.cow-list li{
 }
 
 .memo-line{
-  margin-left: 5px;
+  margin: 0 auto;
 }
 
 .hidden{
