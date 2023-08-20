@@ -1,8 +1,8 @@
 <%= render "shared/header2" %>
 <div class="show-contents">
   <div class="cow-info">
-    <div class="cow-edit-btn">
-      <%= link_to "編集", edit_cow_path, class: 'btn' %>
+    <div class="c-edit-btn">
+      <%= link_to "編集", edit_cow_path, class: 'btn btn-default cow-edit-btn' %>
     </div>
     <div class="cow-number">
       <div class="cow-number-label">
@@ -64,11 +64,11 @@
       </div>
     </div>
     <div class="feed-option-box">
-      <div class="feed-edit">
-        <%= link_to "餌の編集", edit_cow_cow_feed_path(@cow), class:'btn' %>
+      <div class="f-edit">
+        <%= link_to "餌の編集", edit_cow_cow_feed_path(@cow), class:'btn btn-default feed-edit' %>
       </div>
-      <div class="feed-edit">
-        <%= link_to "餌の追加", new_cow_cow_feed_path(@cow), class:'btn' %>
+      <div class="f-edit">
+        <%= link_to "餌の追加", new_cow_cow_feed_path(@cow), class:'btn btn-default feed-edit' %>
       </div>
     </div>
   </div>

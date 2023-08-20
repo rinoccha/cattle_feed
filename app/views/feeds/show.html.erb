@@ -3,18 +3,18 @@
     <%= link_to "Cattle_Feed", cows_path, class: "title-text"%>
   </div>
   <div class="sub-contents">
-    <div class="back-btn">
-      <%= link_to "戻る", feeds_path, class: 'btn'%>
+    <div class="back">
+      <%= link_to "戻る", feeds_path, class: 'btn btn-default back-btn'%>
     </div>
   </div>
 </header>
 <div class="feed-show-main">
   <div class="feed-show-btn">
-    <div class="feed-edit">
-      <%= link_to "編集", edit_feed_path(@feed.id), class:"btn" %>
+    <div class="f-edit">
+      <%= link_to "編集", edit_feed_path(@feed.id), class:"btn btn-default feed-edit" %>
     </div>
-    <div class="feed-destroy">
-      <%= link_to "削除", feed_path(@feed.id),method: :delete, class:"btn" %>
+    <div class="f-destroy">
+      <%= link_to "削除", feed_path(@feed.id),method: :delete, class:"btn btn-default feed-destroy" %>
     </div>
   </div>
   <div class="feed-name">
