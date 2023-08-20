@@ -59,7 +59,7 @@
 .feed-show-btn .feed-edit{
   height: 70px;
   width: 150px;
-  font-size: 50px;
+  font-size: 30px;
   background-color: pink;
   border: 1px solid black;
   border-radius: 5px;
@@ -72,7 +72,7 @@
 .feed-show-btn .feed-destroy{
   height: 70px;
   width: 150px;
-  font-size: 50px;
+  font-size: 30px;
   background-color: rgb(98, 98, 241);
   border: 1px solid black;
   border-radius: 5px;
@@ -99,7 +99,10 @@
 
 .feed-nutrients .feed-nutrients-title{
   font-size: 40px;
-  margin-bottom: 20px;
+  border-radius: 5px 5px 0 0;
+  width: auto;
+  padding: 3px 10px;
+  background-color: gold;
 }
 
 .feed-nutrients .feed-nutrients-lists{
