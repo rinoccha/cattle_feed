@@ -3,8 +3,8 @@
     <%= link_to "Cattle_Feed", cows_path, class: "title-text"%>
   </div>
   <div class="sub-contents">
-    <div class="back-btn">
-      <%= link_to "戻る", cow_path(@cow.id), class: 'btn'%>
+    <div class="back">
+      <%= link_to "戻る", cow_path(@cow.id), class: 'btn btn-default back-btn'%>
     </div>
   </div>
 </header>
@@ -58,8 +58,8 @@
     </div>
   </div>
   <div class=box>
-    <div class="feed-edit-btn">
-      <%= link_to "餌の追加", new_cow_cow_feed_path(@cow), class:'btn' %>
+    <div class="f-edit-btn">
+      <%= link_to "餌の追加", new_cow_cow_feed_path(@cow), class:'btn btn-default feed-edit-btn' %>
     </div>
   </div>
 </div>

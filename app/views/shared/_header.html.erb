@@ -4,13 +4,13 @@
   </div>
   <div class="sub-contents">
     <div class="cow-plus">
-      <%= link_to "牛の追加", new_cow_path, method: :get, class: 'btn' %>
+      <%= link_to "牛の追加", new_cow_path, method: :get, class: 'btn btn-default cow-plus' %>
     </div>
     <div class="feed-edit">
-      <%= link_to "餌の編集", feeds_path, class: 'btn' %>
+      <%= link_to "餌の編集", feeds_path, class: 'btn btn-default feed-edit' %>
     </div>
     <div class="logout">
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-default logout'%>
     </div>
   </div>
 </header>
